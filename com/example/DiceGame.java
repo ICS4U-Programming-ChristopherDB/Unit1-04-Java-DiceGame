@@ -44,17 +44,25 @@ public final class DiceGame {
         System.out.print("Enter your guess: ");
         userGuess = sc.nextInt();
 
-        // Checks if the guess is too large or too small.
-        if (userGuess > randNum) {
-          System.out.println("Guess too large!");
-        }
-        if (userGuess < randNum) {
-          System.out.println("Guess too small!");
+        // Checks if user's guess is in range.
+        if (userGuess >= 0 && userGuess <= 6) {
+          // Checks if the guess is too large or too small.
+          if (userGuess > randNum) {
+            System.out.println("Guess too large!");
+          }
+          if (userGuess < randNum) {
+            System.out.println("Guess too small!");
+          }
+          // If the user entered a number out of range.
+        } else {
+          System.out.println("You must enter a number from 1-6");
+          guesses--;
         }
 
         // If the user did not enter an integer, continue loop.
       } catch (Exception e) {
         System.out.println("Invalid input!");
+        guesses--;
         sc.nextLine();
       }
 
