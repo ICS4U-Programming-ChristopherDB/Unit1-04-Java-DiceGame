@@ -1,5 +1,8 @@
 package com.example;
 
+import java.util.Random;
+import java.util.Scanner;
+
 /**
  * Dice guessing game.
  *
@@ -7,9 +10,6 @@ package com.example;
  * @version 1.0
  * @since 1-3-2024
  */
-import java.util.Random;
-import java.util.Scanner;
-
 // DiceGame class
 public final class DiceGame {
 
@@ -44,8 +44,8 @@ public final class DiceGame {
         System.out.print("Enter your guess: ");
         userGuess = sc.nextInt();
 
-        // Checks if user's guess is in range.
-        if (userGuess >= 0 && userGuess <= 6) {
+        // Checks if user's guess is in range (1,6).
+        if (userGuess >= minimum && userGuess <= maximum) {
           // Checks if the guess is too large or too small.
           if (userGuess > randNum) {
             System.out.println("Guess too large!");
